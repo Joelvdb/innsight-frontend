@@ -1,0 +1,45 @@
+[
+  {
+    "id": "1",
+    "planNumber": "502-0643213",
+    "city": "ירושלים",
+    "mahut": "תוספת זכויות בנייה והסדרת חריגות",
+    "status": "בהפקדה",
+    "takanon_text": "התכנית נועדה להסדיר את זכויות הבנייה במגרש 101, להוסיף קומות וליצור מסחר בקומת הקרקע...",
+    "takanon_url": "https://mavat.iplan.gov.il/blueprints/1",
+    "govMapUrl": "https://www.govmap.gov.il/?z=10&c=210000,600000",
+    "nispachim": [
+      { "name": "נספח בינוי", "url": "https://mavat.iplan.gov.il/nispach/1" },
+      { "name": "נספח תנועה", "url": "https://mavat.iplan.gov.il/nispach/2" }
+    ]
+  },
+  {
+    "id": "2",
+    "planNumber": "301-0854921",
+    "city": "תל אביב - יפו",
+    "mahut": "מגדל מגורים ומסחר ברחוב הרצל",
+    "status": "מאושר",
+    "takanon_text": "הקמת מגדל מגורים בן 30 קומות מעל קומת מסחר כפולה, כולל שטחי ציבור והרחבת המדרכה...",
+    "takanon_url": "https://mavat.iplan.gov.il/blueprints/2",
+    "govMapUrl": "https://www.govmap.gov.il/?z=12&c=180000,660000",
+    "nispachim": [
+      { "name": "נספח אקוסטי", "url": "https://mavat.iplan.gov.il/nispach/3" },
+      { "name": "דו״ח עצים", "url": "https://mavat.iplan.gov.il/nispach/4" },
+      { "name": "תשריט", "url": "https://mavat.iplan.gov.il/nispach/5" }
+    ]
+  },
+  {
+    "id": "3",
+    "planNumber": "101-0123456",
+    "city": "חיפה",
+    "mahut": "שימור מבנים במושבה הגרמנית",
+    "status": "בהכנה",
+    "takanon_text": "תכנית לשימור המרקם ההיסטורי של המושבה הגרמנית בחיפה, הכוללת מגבלות בנייה והנחיות עיצוביות...",
+    "takanon_url": "https://mavat.iplan.gov.il/blueprints/3",
+    "govMapUrl": "https://www.govmap.gov.il/?z=11&c=200000,740000",
+    "nispachim": [
+      { "name": "נספח שימור", "url": "https://mavat.iplan.gov.il/nispach/6" },
+      { "name": "תיק תיעוד", "url": "https://mavat.iplan.gov.il/nispach/7" }
+    ]
+  }
+]
