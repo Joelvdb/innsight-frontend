@@ -37,7 +37,9 @@ export default function Dashboard() {
     );
   };
 
-  const handleSendMessage = (text: string) => {
+  const handleSendMessage = async (text: string) => {
+    if (!selectedPlan) return;
+
     const newMessage: Message = {
       id: Date.now().toString(),
       role: "user",
@@ -45,15 +47,41 @@ export default function Dashboard() {
       timestamp: new Date().toISOString(),
     };
     setCurrentMessages((prev) => [...prev, newMessage]);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: text,
+          planId: selectedPlan.id,
+          planNumber: selectedPlan.planNumber,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: "ai",
-        text: `ניתוח תכנית ${selectedPlan?.planNumber}...`,
+        text: data.answer,
         timestamp: new Date().toISOString(),
       };
       setCurrentMessages((prev) => [...prev, aiResponse]);
-    }, 1000);
+    } catch (error) {
+      console.error("Chat API Error:", error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "ai",
+        text: "מצטער, אירעה שגיאה בתקשורת עם השרת. אנא נסה שוב מאוחר יותר.",
+        timestamp: new Date().toISOString(),
+      };
+      setCurrentMessages((prev) => [...prev, errorMessage]);
+    }
   };
 
   const handleNewChat = () => {
