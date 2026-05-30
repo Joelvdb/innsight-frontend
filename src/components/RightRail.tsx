@@ -89,11 +89,11 @@ export default function RightRail({
               onClick={() => onSelectConversation(conv.id)}
               className={cn(
                 "w-full text-right p-3 transition-colors hover:bg-slate-800 group relative",
-                activeConversationId === conv.id && "bg-slate-800 text-white border-r-2 border-r-blue-500"
+                activeConversationId === conv.id && "bg-slate-800 text-white border-r-2 border-r-orange-500"
               )}
             >
               <div className="flex items-start gap-3">
-                <MessageSquare className={cn("w-4 h-4 mt-0.5 shrink-0", activeConversationId === conv.id ? "text-blue-400" : "text-slate-500")} />
+                <MessageSquare className={cn("w-4 h-4 mt-0.5 shrink-0", activeConversationId === conv.id ? "text-orange-400" : "text-slate-500")} />
                 {!isCollapsed && (
                   <div className="min-w-0">
                     <div className="text-sm font-medium truncate">תכנית {conv.planNumber}</div>

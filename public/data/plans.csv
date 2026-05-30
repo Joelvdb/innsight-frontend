@@ -1,0 +1,31 @@
+id,planNumber,city,mahut,status,takanon_text,takanon_url,govMapUrl,nispachim,lastUpdated,roomsCount,latitude,longitude
+1,353-0869016,ירושלים,תוספת זכויות בנייה,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/1,https://www.govmap.gov.il,[],2024-05-01,15,31.7683,35.2137
+2,301-0854921,תל אביב,מגדל מגורים,אדום,טקסט תקנון...,https://mavat.iplan.gov.il/2,https://www.govmap.gov.il,[],2024-04-15,850,32.0853,34.7818
+3,101-0123456,חיפה,שימור מבנים,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/3,https://www.govmap.gov.il,[],2024-03-20,0,32.794,34.9896
+4,202-0987654,קצרין,פיתוח רובע חדש,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/4,https://www.govmap.gov.il,[],2024-05-02,50,32.99,35.69
+5,404-1122334,אילת,מלונאות חוף,אדום,טקסט תקנון...,https://mavat.iplan.gov.il/5,https://www.govmap.gov.il,[],2024-04-28,340,29.55,34.95
+6,505-5544332,קרית שמונה,התחדשות מרכז העיר,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/6,https://www.govmap.gov.il,[],2024-02-10,0,33.21,35.57
+7,606-6677889,נהריה,טיילת צפונית,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/7,https://www.govmap.gov.il,[],2024-05-03,200,33.00,35.09
+8,707-1122445,טבריה,מתחם תיירות,אדום,טקסט תקנון...,https://mavat.iplan.gov.il/8,https://www.govmap.gov.il,[],2024-04-05,45,32.79,35.53
+9,808-9988776,צפת,רובע האמנים,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/9,https://www.govmap.gov.il,[],2024-03-12,0,32.96,35.49
+10,909-3344556,באר שבע,שכונה דרומית,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/10,https://www.govmap.gov.il,[],2024-05-01,800,31.25,34.79
+11,111-2223334,מצפה רמון,מלון מדברי,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/11,https://www.govmap.gov.il,[],2024-04-20,0,30.61,34.80
+12,222-3334445,ירוחם,אזור תעשייה,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/12,https://www.govmap.gov.il,[],2024-01-15,650,31.08,34.92
+13,333-4445556,דימונה,מרכז לוגיסטי,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/13,https://www.govmap.gov.il,[],2024-05-02,12,31.07,35.03
+14,444-5556667,ערד,תיירות מרפא,אדום,טקסט תקנון...,https://mavat.iplan.gov.il/14,https://www.govmap.gov.il,[],2024-04-10,0,31.26,35.21
+15,555-6667778,נתניה,פיתוח המצוק,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/15,https://www.govmap.gov.il,[],2023-12-20,250,32.33,34.85
+16,666-7778889,הרצליה,מתחם הייטק,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/16,https://www.govmap.gov.il,[],2024-05-03,0,32.16,34.84
+17,777-8889990,אשדוד,נמל לוגיסטי,אדום,טקסט תקנון...,https://mavat.iplan.gov.il/17,https://www.govmap.gov.il,[],2024-04-18,0,31.81,34.65
+18,888-9990001,אשקלון,מרינה חדשה,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/18,https://www.govmap.gov.il,[],2024-03-05,0,31.67,34.56
+19,999-0001112,רחובות,פארק המדע,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/19,https://www.govmap.gov.il,[],2024-05-01,0,31.89,34.81
+20,101-1112223,מודיעין,מרכז העיר,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/20,https://www.govmap.gov.il,[],2024-04-25,920,31.90,35.01
+21,202-2223334,רמלה,לוגיסטיקה,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/21,https://www.govmap.gov.il,[],2024-02-15,850,31.93,34.87
+22,303-3334445,לוד,תחנת רכבת,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/22,https://www.govmap.gov.il,[],2024-05-03,450,31.95,34.89
+23,404-4445556,בית שמש,שכונה חדשה,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/23,https://www.govmap.gov.il,[],2024-04-12,0,31.75,34.99
+24,505-5556667,חדרה,אנרגיה ירוקה,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/24,https://www.govmap.gov.il,[],2024-01-30,180,32.44,34.92
+25,606-6667778,קיסריה,גולף והרחבה,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/25,https://www.govmap.gov.il,[],2024-05-02,0,32.51,34.90
+26,707-7778889,עפולה,מרכז רפואי,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/26,https://www.govmap.gov.il,[],2024-04-05,0,32.61,35.29
+27,808-8889990,נצרת,תיירות ושימור,צהוב,טקסט תקנון...,https://mavat.iplan.gov.il/27,https://www.govmap.gov.il,[],2023-11-15,300,32.70,35.30
+28,909-9990001,כרמיאל,תעשייה מתקדמת,כתום,טקסט תקנון...,https://mavat.iplan.gov.il/28,https://www.govmap.gov.il,[],2024-05-03,500,32.91,35.29
+29,101-2224445,כפר סבא,התחדשות עירונית,אדום,טקסט תקנון...,https://mavat.iplan.gov.il/29,https://www.govmap.gov.il,[],2024-04-22,120,32.18,34.91
+30,202-3335556,רעננה,אזור תעסוקה,ירוק,טקסט תקנון...,https://mavat.iplan.gov.il/30,https://www.govmap.gov.il,[],2024-03-30,400,32.19,34.88

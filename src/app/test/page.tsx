@@ -10,7 +10,7 @@ export default function TestPage() {
         {ok ? "✅ JS IS WORKING" : "❌ JS IS NOT WORKING"}
       </h1>
       <button 
-        className="mt-4 p-2 bg-blue-500 text-white rounded"
+        className="mt-4 p-2 bg-orange-500 text-white rounded"
         onClick={() => alert("CLICKED!")}
       >
         Click me

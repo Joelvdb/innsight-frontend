@@ -1,81 +1,52 @@
 import { NextResponse } from "next/server";
 import { v1beta } from "@google-cloud/discoveryengine";
 
-// Initialize client outside the handler for better performance
-const client = new v1beta.ConversationalSearchServiceClient();
+function makeSearchClient() {
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+    const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+    return new v1beta.ConversationalSearchServiceClient({ credentials });
+  }
+  return new v1beta.ConversationalSearchServiceClient();
+}
+
+const client = makeSearchClient();
 
 export async function POST(request: Request) {
   try {
-    const { message, planId, planNumber, sessionId } = await request.json();
+    const { message } = await request.json();
 
-    const projectId = process.env.NEXT_PUBLIC_GCP_PROJECT_ID;
-    const location = process.env.NEXT_PUBLIC_GCP_LOCATION || "global";
-    const dataStoreId = process.env.NEXT_PUBLIC_DATA_STORE_ID;
+    const projectId = process.env.GCP_PROJECT_ID;
+    const location = process.env.GCP_LOCATION || "global";
+    const engineId = process.env.GCP_ENGINE_ID;
 
-    console.log("=== Vertex AI Search Request ===");
-    console.log("Original Message:", message);
-    console.log("Plan ID (Folder):", planId);
-    console.log("Plan Number:", planNumber);
-
-    if (!projectId || !dataStoreId) {
+    if (!projectId || !engineId) {
       return NextResponse.json(
-        { error: "Missing configuration environment variables" },
-        { status: 500 },
+        { error: "Missing GCP_PROJECT_ID or GCP_ENGINE_ID environment variables" },
+        { status: 500 }
       );
     }
 
-    const servingConfig = `projects/${projectId}/locations/${location}/collections/default_collection/engines/${dataStoreId}/servingConfigs/default_serving_config`;
-
-    // Strict prompt modification to force focus on the specific plan number
-    const enhancedMessage = `התמקד אך ורק במסמכים הקשורים לתכנית מספר ${planNumber}. 
-אל תשתמש במידע מתכניות אחרות שאינן תכנית ${planNumber}. אם המידע לא נמצא במסמכי התכנית הזו, ציין זאת במפורש.
-השאלה שלי היא: ${message}`;
-
-    // Update filter to use plan_number (assuming this is the field name in your schema)
-    const filter = `plan_number: ANY("${planNumber}")`;
-
-    console.log("Enhanced Message:", enhancedMessage);
-    console.log("Filter String:", filter);
+    const servingConfig = `projects/${projectId}/locations/${location}/collections/default_collection/engines/${engineId}/servingConfigs/default_search`;
 
     const apiRequest: any = {
       servingConfig,
-      query: { text: enhancedMessage },
-      searchConfig: {
-        filter: filter,
-      },
+      query: { text: message },
+      queryExpansionSpec: { condition: "AUTO" },
+      spellCorrectionSpec: { mode: "AUTO" },
+      languageCode: "he",
     };
-
-    if (sessionId) {
-      apiRequest.session = `projects/${projectId}/locations/${location}/collections/default_collection/engines/${dataStoreId}/sessions/${sessionId}`;
-    }
 
     const [response] = await client.answerQuery(apiRequest);
 
-    console.log("=== Vertex AI Search Response ===");
-    console.log("Answer Length:", response.answer?.answerText?.length || 0);
-    
-    if (response.answer?.citations) {
-      console.log("Citations count:", response.answer.citations.length);
-      response.answer.citations.forEach((c: any, i: number) => {
-        // Log source info to verify filtering
-        console.log(`Citation ${i + 1} Source:`, c.sourceText || c.documentMetadata?.uri);
-      });
-    }
-    console.log("==================================");
-
     return NextResponse.json({
-      answer: response.answer?.answerText || "לא נמצאה תשובה במקורות המידע.",
+      answer: response.answer?.answerText || "לא נמצאה תשובה.",
       citations: response.answer?.citations || [],
-      session: response.session,
     });
   } catch (error: any) {
-    console.error("!!! Vertex AI Search Error !!!");
-    console.error("Error Message:", error.message);
-    console.error("Full Error JSON:", JSON.stringify(error, null, 2));
-
+    console.error("Agent Error:", error.message);
     return NextResponse.json(
-      { error: error.message || "Failed to fetch response from AI" },
-      { status: 500 },
+      { error: error.message || "Failed to fetch response" },
+      { status: 500 }
     );
   }
 }
