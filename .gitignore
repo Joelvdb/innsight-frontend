@@ -34,11 +34,9 @@ yarn-error.log*
 .env*
 gcp-credentials.json
 
-# firebase & gcp configs (sensitive)
-.firebaserc
-firebase.json
-apphosting.yaml
-*-*.json
+# firebase & gcp configs (sensitive — only the service account key)
+*serviceaccount*.json
+bgu-*.json
 
 # vercel
 .vercel
